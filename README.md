@@ -115,7 +115,7 @@ Formatos disponíveis: **CSV, Excel, HTML** (PDF pode ser habilitado).
 
 ## 📡 API RESTful
 
-Seu projeto conta com uma API RESTful exposta por meio do módulo `/api`. Abaixo, veja os endpoints disponíveis e como utilizá-los:
+O projeto conta com uma API RESTful exposta por meio do módulo `/api`. Abaixo, veja os endpoints disponíveis e como utilizá-los:
 
 ### 🔒 Autenticação
 
