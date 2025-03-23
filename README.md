@@ -175,22 +175,30 @@ Seu projeto conta com uma API RESTful exposta por meio do módulo `/api`. Abaixo
 
 ## 📁 Estrutura Importante
 
-- `models/` - Contém os modelos das tabelas e das views
-- `controllers/` - Contém os controllers padrão e do relatório
-- `views/` - Contém todas as interfaces
-- `widgets/Alert.php` - Toast de mensagens padrão
-- `assets/custom.js` - Máscaras e feedback JS
+- `models/` – Modelos principais das tabelas (`Livro`, `Autor`, `Assunto`, etc) e das views SQL utilizadas em relatórios.
+- `controllers/` – Controllers padrão das telas e o controller dedicado ao relatório.
+- `views/` – Interfaces principais com Bootstrap 5, gráficos via Chart.js e filtros avançados.
+- `modules/api/` – Estrutura da API RESTful (módulo separado com suporte a versionamento).
+- `widgets/Alert.php` – Componente customizado de exibição de mensagens com suporte a **Bootstrap Toasts**.
+- `assets/custom.js` – Scripts customizados para aplicar máscaras (CPF, CNPJ, Moeda), além de exibir mensagens de erro ou sucesso via Toasts.
+- `tests/unit/` – Casos de testes unitários com `PHPUnit`, seguindo abordagem TDD.
+- `config/test_db.php` – Configuração para ambiente de testes.
 
 ---
 
 ## 💡 Observações
 
-- O projeto foi desenvolvido com foco em clareza, desempenho e boa UX.
-- Utiliza **AjaxCrud** para operações modais e interativas.
-- Segue os princípios do **TDD** com testes reais.
-- Utiliza **views no banco** para performance e clareza nos relatórios.
+- ✅ Projeto construído com foco em clareza, desempenho e boa experiência do usuário.
+- ⚙️ Utiliza **AjaxCrud** para criar CRUDs dinâmicos com modais, sem recarregar a página.
+- 📊 Todos os relatórios são baseados em **views SQL**, permitindo alta performance e fácil entendimento.
+- 🧪 Possui testes com **PHPUnit**, validando regras de negócio e formato dos dados.
+- 🔒 Possui **tratamento de erros específicos**, evitando mensagens genéricas em ações sensíveis como exclusões com relacionamentos.
+- 🧩 Implementa um **módulo de API RESTful** para integração com sistemas externos.
+  - Os modelos usam `fields()` para definir os dados visíveis e já aplicam **formatação** (ex: datas, CPF, CNPJ).
+  - Pronto para ser consumido por sistemas externos ou ferramentas como **Postman**, **Insomnia** etc.
 
 ---
+
 
 ## ✨ Desenvolvido por
 
