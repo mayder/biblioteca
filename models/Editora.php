@@ -51,19 +51,6 @@ class Editora extends \yii\db\ActiveRecord
         ];
     }
 
-    public function fields()
-    {
-        return [
-            'id',
-            'razao_social',
-            'nome_fantasia',
-            'cnpj',
-            'status',
-            // 'data_cadastro',
-            // 'data_alteracao'
-        ];
-    }
-
     public function validarCnpj($attribute)
     {
         $cnpj = preg_replace('/[^0-9]/', '', $this->$attribute);
@@ -124,6 +111,19 @@ class Editora extends \yii\db\ActiveRecord
             'status' => 'Status',
             'data_cadastro' => 'Cadastrado em',
             'data_alteracao' => 'Última alteração em',
+        ];
+    }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'razao_social',
+            'nome_fantasia',
+            'cnpj',
+            'status',
+            // 'data_cadastro',
+            // 'data_alteracao'
         ];
     }
 

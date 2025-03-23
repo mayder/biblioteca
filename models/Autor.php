@@ -45,19 +45,6 @@ class Autor extends \yii\db\ActiveRecord
         ];
     }
 
-    public function fields()
-    {
-        return [
-            'id',
-            'nome',
-            'cpf',
-            'data_nascimento',
-            'status',
-            // 'data_cadastro',
-            // 'data_alteracao'
-        ];
-    }
-
     public function validarCpf($attribute)
     {
         $cpf = preg_replace('/[^0-9]/', '', $this->$attribute);
@@ -113,6 +100,21 @@ class Autor extends \yii\db\ActiveRecord
             'status' => 'Status',
             'data_cadastro' => 'Cadastrado em',
             'data_alteracao' => 'Última alteração em',
+        ];
+    }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'nome',
+            'cpf',
+            'data_nascimento' => function () {
+                return Yii::$app->formatter->asDate($this->data_nascimento, 'php:d/m/Y');
+            },
+            'status',
+            // 'data_cadastro',
+            // 'data_alteracao'
         ];
     }
 
