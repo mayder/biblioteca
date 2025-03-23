@@ -49,6 +49,18 @@ class Assunto extends \yii\db\ActiveRecord
         ];
     }
 
+    public function fields()
+    {
+        return [
+            'id',
+            'descricao',
+            'sigla',
+            'status',
+            // 'data_cadastro',
+            // 'data_alteracao'
+        ];
+    }
+
     public function beforeValidate()
     {
         $this->generateUuidIfEmpty();

@@ -82,7 +82,10 @@ $config = [
         'gridview' =>  [
             'class' => '\kartik\grid\Module',
             'bsVersion' => '5.x',
-        ]
+        ],
+        'api' => [
+            'class' => 'app\modules\api\Module',
+        ],
     ]
 ];
 

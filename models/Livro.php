@@ -120,6 +120,26 @@ class Livro extends \yii\db\ActiveRecord
         ];
     }
 
+    public function fields()
+    {
+        return [
+            'id',
+            'titulo',
+            'edicao',
+            'ano_publicacao',
+            'valor_recomendado' => function () {
+                return floatval($this->valor_recomendado);
+            },
+            'autores' => 'autors',
+            'situacao',
+            'editora',
+            'assuntos',
+            'data_cadastro',
+            'data_alteracao'
+        ];
+    }
+
+
     /**
      * Gets query for [[Assuntos]].
      *

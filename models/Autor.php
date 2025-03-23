@@ -45,6 +45,19 @@ class Autor extends \yii\db\ActiveRecord
         ];
     }
 
+    public function fields()
+    {
+        return [
+            'id',
+            'nome',
+            'cpf',
+            'data_nascimento',
+            'status',
+            // 'data_cadastro',
+            // 'data_alteracao'
+        ];
+    }
+
     public function validarCpf($attribute)
     {
         $cpf = preg_replace('/[^0-9]/', '', $this->$attribute);

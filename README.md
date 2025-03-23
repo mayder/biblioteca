@@ -46,8 +46,8 @@ Sistema desenvolvido em Yii2 com foco em gerenciamento de livros, autores e assu
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/biblioteca-digital.git
-cd biblioteca-digital
+git clone https://github.com/mayder/biblioteca.git
+cd biblioteca
 ```
 
 2. **Instale as dependências:**
