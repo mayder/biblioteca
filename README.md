@@ -62,7 +62,7 @@ composer install
 CREATE DATABASE biblioteca CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-Importe o arquivo `database.sql` (fornecido na raiz do projeto).
+Importe os scripts que estão na pasta `base/bd` em ordem.
 
 4. **Configure a conexão com o banco:**
 Edite o arquivo `config/db.php`:
@@ -110,6 +110,66 @@ Formatos disponíveis: **CSV, Excel, HTML** (PDF pode ser habilitado).
 
 - O sistema não possui controle de login neste desafio.
 - Caso precise, a estrutura de autenticação pode ser facilmente adicionada.
+
+---
+
+## 📡 API RESTful
+
+Seu projeto conta com uma API RESTful exposta por meio do módulo `/api`. Abaixo, veja os endpoints disponíveis e como utilizá-los:
+
+### 🔒 Autenticação
+
+> ⚠️ Atualmente a API está aberta (sem autenticação). Para uso em produção, recomenda-se proteger com JWT, OAuth2, ou outro método.
+
+---
+
+### 📘 Autores (`autor`)
+
+**Endpoint Base**:  
+`https://seusite.com/api/autor`
+
+| Método | Rota                         | Ação                       |
+|--------|------------------------------|----------------------------|
+| GET    | `/api/autor`                | Lista todos os autores     |
+| GET    | `/api/autor/{id}`           | Detalha um autor específico |
+| POST   | `/api/autor`                | Cria um novo autor         |
+| PUT    | `/api/autor/{id}`           | Atualiza um autor          |
+| DELETE | `/api/autor/{id}`           | Remove um autor            |
+
+---
+
+### 📚 Livros (`livro`)
+
+**Endpoint Base**:  
+`https://seusite.com/api/livro`
+
+| Método | Rota                         | Ação                       |
+|--------|------------------------------|----------------------------|
+| GET    | `/api/livro`                | Lista todos os livros      |
+| GET    | `/api/livro/{id}`           | Detalha um livro específico |
+| POST   | `/api/livro`                | Cria um novo livro         |
+| PUT    | `/api/livro/{id}`           | Atualiza um livro          |
+| DELETE | `/api/livro/{id}`           | Remove um livro            |
+
+---
+
+### 🏷️ Assuntos (`assunto`)
+
+**Endpoint Base**:  
+`https://seusite.com/api/assunto`
+
+| Método | Rota                         | Ação                        |
+|--------|------------------------------|-----------------------------|
+| GET    | `/api/assunto`              | Lista todos os assuntos     |
+| GET    | `/api/assunto/{id}`         | Detalha um assunto específico |
+| POST   | `/api/assunto`              | Cria um novo assunto        |
+| PUT    | `/api/assunto/{id}`         | Atualiza um assunto         |
+| DELETE | `/api/assunto/{id}`         | Remove um assunto           |
+
+---
+
+> ℹ️ Todas as respostas da API são retornadas em formato JSON.  
+> Os campos expostos estão definidos na função `fields()` de cada model.
 
 ---
 
